@@ -1,30 +1,15 @@
-# Where things are
-source:       .
-destination:  ./_site
-plugins:      ./_plugins
-layouts:      ./_layouts
-paginate:     8
+# Jekyll configuration
 
-# Handling Reading
-safe:         false
-include:      [".htaccess"]
-exclude:      []
-keep_files:   [".git", ".svn"]
-encoding:     "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-textile_ext:  "textile"
+name: My blog
+description: A jekyll theme
 
-# Filtering Content
-show_drafts:  null
-limit_posts:  0
-future:       true
-unpublished:  false
+# url is currently only used only for the RSS feed in feed.xml
+url: http://localhost:4000
 
-# Conversion
-markdown:     kramdown
-highlighter:  pygments
-lsi:          false
-excerpt_separator: "\n\n"
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
 
 # Serving
 detach:       false
@@ -32,51 +17,25 @@ port:         4000
 host:         127.0.0.1
 baseurl:      "" # does not include hostname
 
-# Outputting
-permalink:     date
-paginate_path: /page:num
-timezone:      null
+# This can be '' to hide the Github nav button
+github: 'scotte/jekyll-clean'
 
-#站点基础配置
-title: iLotus
-subTitle: Just another Jekyll blog.
-description: 百变茄
-url: http://jsiwa.github.io
-feed: /atom.xml
+# Set this to your UA-# value, or '' to disable the block completely
+gaaccount: ''
 
-#菜单配置
-nav:
-  - text: 首页
-    url: /index.html
-    icon: icon-home
-    class: home
-  - text: 文章归档
-    url: /archives.html
-    icon: icon-reorder
-    class: none
-  - text: 关于我
-    url: /contact.html
-    icon: icon-envelope-alt
-    class: none
-  - text: 联系我
-    url: http://www.zhanxin.info/contact.html
-    icon: icon-heart
-    class: none
-  - text: 博客源代码
-    url: https://github.com/pizn/iLotus
-    icon: icon-github
-    class: none
+# Set this to your disqus shortname to enable comments. Note that the 'comments'
+# setting below must also be true. Individual posts can override 'comments' to
+# disable on a post-by-post basis
+disqus: ''
+comments: true
 
-page:
-  - text: 文章分类
-    url: /archives.html
-    last: true
-  - text: 友情链接
-    url: /links.html
-    last: true
-  - text: 关于我
-    url: /contact.html
-    last: false
+permalink: /:year/:month/:title
+#每页显示文章数
+paginate: 8
 
-author:
-  name: PIZn
+highlighter: false
+markdown:    redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+exclude: ['README.md', 'LICENSE']
