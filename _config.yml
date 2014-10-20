@@ -1,15 +1,7 @@
-# Jekyll configuration
-
-name: My blog
-description: A jekyll theme
-
-# url is currently only used only for the RSS feed in feed.xml
-url: http://jsiwa.github.io
-
-# baseurl will often be '', but for a project page on gh-pages, it needs to
-# be the project name.
-# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
-#     run it like so: jekyll serve --baseurl=''
+# 站点信息
+title:        百变茄的网络日记
+description:  不想做产品的程序员不是好的分析师
+url:          http://jsiwa.github.io
 
 # Serving
 detach:       false
@@ -17,25 +9,13 @@ port:         4000
 host:         127.0.0.1
 baseurl:      "" # does not include hostname
 
-# This can be '' to hide the Github nav button
-github: 'scotte/jekyll-clean'
 
-# Set this to your UA-# value, or '' to disable the block completely
-gaaccount: ''
+github:       http://github.com/fuhongxue
 
-# Set this to your disqus shortname to enable comments. Note that the 'comments'
-# setting below must also be true. Individual posts can override 'comments' to
-# disable on a post-by-post basis
-disqus: ''
-comments: true
 
-permalink: /:year/:month/:title
+permalink:    /:year/:month/:title
 #每页显示文章数
-paginate: 8
+paginate:     8
 
-pygments: true
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
-
-exclude: ['README.md', 'LICENSE']
+pygments:     true
+markdown:     redcarpet

@@ -11,7 +11,7 @@ header .nav-header {overflow: hidden;}
 header a {color: #fff;}
 header .logo {font-weight:400;font-size:20px;line-height:20px;padding: 15px 0;float: left;}
 header .nav-main {float:left;line-height: 20px;padding: 15px 0;margin-left: 10px;}
-header .nav-main a {font-size: 16px;margin-left: 40px;-webkit-transition: color 2s;transition: color 2s;}
+header .nav-main a {font-size: 16px;margin-left: 40px;-webkit-transition: color 1s;transition: color 1s;}
 header .nav-main a:hover {color: #bbf1e0;}
 /** 导航条隐藏按钮 **/
 .nav-toggle {display:none;position: relative;float:right;cursor: pointer;padding: 9px 10px;margin: 8px 15px 0 0;background-color: transparent;border: 1px solid #fff;border-radius: 4px;-webkit-transition: background-color 1s;transition: background-color 1s;}
