@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>百变茄的网络日记</title>
+</head>
+<body>
+	<header>
+		<div class="nav-header w">
+			<h2 class="logo">百变茄的网络日记</h2>
+			<button id="nav-toggle" class="nav-toggle" type="button">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<nav id="nav-main" class="nav-main">
+				<a href="http://localhost:4000/index.html">首页</a>
+				<a href="#">目录</a>
+				<a href="#">标签</a>
+				<a href="#">关于我</a>
+			</nav>			
+		</div>
+	</header>
+	<div class="w con">
+		<div class="list-header">
+	<h4>最新文章</h4>
+</div>
+<ul class="post-list">
+
+　　<li><span class="post-time">2012-05-06</span><a href="/2012/05/06">第一篇06</a></li>
+
+　　<li><span class="post-time">2012-05-05</span><a href="/2012/05/05">第一篇05</a></li>
+
+　　<li><span class="post-time">2012-05-04</span><a href="/2012/05/04">第一篇04</a></li>
+
+　　<li><span class="post-time">2012-05-03</span><a href="/2012/05/03">第一篇03</a></li>
+
+　　<li><span class="post-time">2012-05-02</span><a href="/2012/05/02">第一篇02</a></li>
+
+　　<li><span class="post-time">2012-05-01</span><a href="/2012/05/11">第一篇11啦发了暗室逢灯爱上拉手</a></li>
+
+　　<li><span class="post-time">2012-05-01</span><a href="/2012/05/01">第一篇01</a></li>
+
+</ul>
+
+
+<!-- 分页 -->
+
+<div class="pagination">
+  
+    <a class="page-prev" href="/index.html">&laquo; 前一页</a>
+  
+
+  
+    
+      <a class="page-num" href="/index.html">1</a>
+    
+  
+    
+      <em class="page-num">2</em>
+    
+  
+
+  
+    <span class="page-next page-none">后一页 &raquo;</span>
+  
+</div>
+
+	</div>
+	<footer>
+		<p class="w">© 百变茄</p>
+	</footer>
+	<script>
+		function getStyle(obj, attr)  
+		{  
+		   return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,false)[attr];
+		}
+		var navToggle = document.getElementById("nav-toggle"),
+			navMain = document.getElementById("nav-main");
+		navToggle.onclick=function(){
+			navMain.style.display = (getStyle(navMain, "display") == "block")?"none":"block";		
+		}
+	</script>
+</body>
+</html>
