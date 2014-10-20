@@ -4,7 +4,7 @@ name: My blog
 description: A jekyll theme
 
 # url is currently only used only for the RSS feed in feed.xml
-url: http://localhost:4000
+url: http://jsiwa.github.io
 
 # baseurl will often be '', but for a project page on gh-pages, it needs to
 # be the project name.
