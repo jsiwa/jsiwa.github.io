@@ -1,0 +1,36 @@
+---
+layout: default
+title: 文章归档
+description: 这是百变茄的网络日志，它是基于Jekyll搭建起来的
+keywords: jekyll
+---
+
+<style>
+    .post-list {padding-bottom: 10px;}   
+    .post-list li {padding-top: 10px;} 
+</style>
+
+{% for post in site.posts  %}
+    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+    {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+
+    {% if forloop.first %}
+    <div class="list-header">
+        <h4>{{ this_year }}</h4>
+    </div>
+    <ul class="post-list">
+    {% endif %}        
+        <li><span class="post-time">{{ post.date | date:'%Y-%m-%d' }}</span><a href="{{ post.url }}">{{ post.title }}</a></li>        
+    {% if forloop.last %}
+    </ul>
+    {% else %}
+    {% if this_year != next_year %}
+    </ul>
+    <div class="list-header">
+        <h4>{{ next_year }}</h4>
+    </div>
+    <ul class="post-list">
+    {% endif %}
+{% endif %}
+
+{% endfor %}

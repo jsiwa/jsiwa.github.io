@@ -4,6 +4,10 @@
 	<meta charset="UTF-8">
 	<title>{{ page.title }}</title>
 	<link rel="stylesheet" href="{{ site.url }}/statics/css/main.css">
+	<link rel="stylesheet" href="{{ site.url }}/statics/css/default.css">
+	<link rel="stylesheet" href="{{ site.url }}/statics/css/monokai_sublime.css">
+	<script src="{{ site.url }}/statics/js/highlight.js"></script>	
+	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 	<header>
@@ -16,8 +20,8 @@
 			</button>
 			<nav id="nav-main" class="nav-main">
 				<a href="{{ site.url }}/index.html">首页</a>
-				<a href="#">目录</a>
-				<a href="#">标签</a>
+				<a href="{{ site.url }}/archives.html">归档</a>
+				<a href="{{ site.url }}/tags.html">标签</a>
 				<a href="#">关于我</a>
 			</nav>			
 		</div>
@@ -38,6 +42,6 @@
 		navToggle.onclick=function(){
 			navMain.style.display = (getStyle(navMain, "display") == "block")?"none":"block";		
 		}
-	</script>
+	</script>	
 </body>
 </html>

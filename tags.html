@@ -1,0 +1,80 @@
+---
+layout: default
+title: 分类标签
+---
+<div id="tag_cloud">
+    {% for tag in site.tags %}
+    <a href="javascript:;" onclick="showTag('{{ tag[0] }}')" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+        {{ tag[0] }}
+    </a>
+    {% endfor %}
+</div>
+
+<div class="list-header" style="display:none;">
+    <h4 id="tag-meta"></h4>
+</div>
+
+<div id="show-tag">
+  <div style="text-align:center">loading...</div>
+</div>
+
+<script src="{{ site.url }}/statics/js/jquery-1.11.1.min.js"></script>
+<!-- 标签云的代码 -->
+<script src="{{ site.url }}/statics/js/jquery.tagcloud.js"></script>
+<script>
+// 标签云
+$.fn.tagcloud.defaults = {
+    size: {
+      start: 12,
+      end: 22,
+      unit: 'px'
+    },
+    color: {
+      start: '#7ccd7c',
+      end: '#cd0000'
+    }
+};
+
+$(function() {
+    $('#tag_cloud a').tagcloud();
+});
+// 定义javascript函数showTag()，异步加载某一个标签的文章列表
+function showTag(tagStr) {
+    $.getJSON("post.json",
+    function(data) {
+        var $tagMeta = $("#tag-meta");
+        $tagMeta.empty().html(tagStr);        
+        $('#show-tag').empty();
+        var postList = "<ul class=\"post-list\">";
+        var count = 0;
+        $.each(data,
+            function(i, item) {
+                $.each(item.tags,
+                    function(j, tag) {
+                        if (tag == tagStr) {
+                            postList += "<li><span class=\"post-time\">"+item.date + "</span><a href=\"" + item.url + "\">" + item.title + "</a></li>";
+                        count++;
+                        }
+                    }
+                );
+            }
+        );
+        if (count > 0) {
+            postList += "</ul>";
+            postNumStr = "（" + count + "篇）";
+            $(".list-header").show();
+            $('#show-tag').append(postList);
+            $tagMeta.append(postNumStr);
+        }
+    });
+}
+// 下面这段代码用url地址来传递参数
+var href = window.location.href;
+var pos = href.indexOf('?tag=');
+var paraStr = href.substring(pos + 5);
+if (pos > 0) {
+    showTag(decodeURI(paraStr));
+} else {
+    showTag("");
+}
+</script>

@@ -1,7 +1,7 @@
 # 站点信息
 title:        百变茄的网络日记
 description:  不想做产品的程序员不是好的分析师
-url:          http://jsiwa.github.io
+url:          jsiwa.github.io
 
 # Serving
 detach:       false
@@ -10,12 +10,12 @@ host:         127.0.0.1
 baseurl:      "" # does not include hostname
 
 
-github:       http://github.com/fuhongxue
+github:       http://github.com/jsiwa
 
 
 permalink:    /:year/:month/:title
 #每页显示文章数
 paginate:     8
 
-pygments:     true
+#pygments:     true
 markdown:     redcarpet

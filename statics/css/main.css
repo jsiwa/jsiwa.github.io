@@ -47,6 +47,7 @@ footer p {font-size: 16px;text-align: center;line-height: 20px;padding: 40px 0!i
 
 /* 文章列表 */
 .post-list .post-time {margin-right: 10px;}
+.post-list li {padding-top: 20px;}
 .post-list a {color: #1c9971;-webkit-transiton: color 1s;transition: color 1s;}
 .post-list a:hover {border-bottom: 1px solid #0bc78b;color: #0bc78b;}
 
