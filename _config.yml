@@ -18,4 +18,4 @@ permalink:    /:year/:month/:title
 paginate:     8
 
 #pygments:     true
-markdown:     redcarpet
+markdown:     kramdown
