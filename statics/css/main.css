@@ -53,9 +53,9 @@ footer p {font-size: 16px;text-align: center;line-height: 20px;padding: 40px 0!i
 
 /* 文章样式 */
 .post-con {font-size: 16px;line-height: 1.6;}
-.post-con h2 {font-size: 20px;padding-bottom: 10px;}
-.post-con h3 {font-size: 18px;padding-bottom: 10px;}
-.post-con h4,.post-con h5,.post-con h6 {font-size: 16px;padding-bottom: 10px;}
+.post-con h2 {font-size: 20px;padding: 10px 0;}
+.post-con h3 {font-size: 18px;padding: 10px 0;}
+.post-con h4,.post-con h5,.post-con h6 {font-size: 16px;padding: 10px 0;}
 .post-con p {padding-bottom: 8px;}
 
 
