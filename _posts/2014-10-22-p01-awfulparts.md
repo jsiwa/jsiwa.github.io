@@ -1,10 +1,10 @@
 ---
 layout:    default
-title:     JavaScript语言精粹笔记 —— 糟粕
+title:     JavaScript语言精粹笔记之毒瘤
 category:  JavaScript
-tags:      学习，JavaScript
+tags:      JavaScript语言精粹
 keyword:   JavaScript语言精粹,JavaScript学习
-description:  JavaScript语言精粹笔记 —— 糟粕，JavaScript的存在一些难以避免的问题特性，并有相应的措施。
+description:  JavaScript语言精粹笔记 —— 毒瘤，JavaScript的存在一些难以避免的问题特性，并有相应的措施。
 ---
 
 <div class="post-con">
