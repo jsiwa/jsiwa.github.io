@@ -51,6 +51,13 @@ footer p {font-size: 16px;text-align: center;line-height: 20px;padding: 40px 0!i
 .post-list a {color: #1c9971;-webkit-transiton: color 1s;transition: color 1s;}
 .post-list a:hover {border-bottom: 1px solid #0bc78b;color: #0bc78b;}
 
+/* 文章样式 */
+.post-con {font-size: 16px;line-height: 1.6;}
+.post-con h2 {font-size: 20px;padding-bottom: 10px;}
+.post-con h3 {font-size: 18px;padding-bottom: 10px;}
+.post-con h4,.post-con h5,.post-con h6 {font-size: 16px;padding-bottom: 10px;}
+.post-con p {padding-bottom: 8px;}
+
 
 /* 屏幕缩放 */
 @media screen and (min-width: 1023px) {
