@@ -1,10 +1,10 @@
 ---
 layout:    default
-title:     JavaScript语言精粹笔记
+title:     JavaScript语言精粹笔记 —— 糟粕
 category:  JavaScript
 tags:      学习，JavaScript
 keyword:   JavaScript语言精粹,JavaScript学习
-description:  JavaScript语言精粹笔记
+description:  JavaScript语言精粹笔记 —— 糟粕，JavaScript的存在一些难以避免的问题特性，并有相应的措施。
 ---
 
 <div class="post-con">
