@@ -8,7 +8,7 @@ description:  关于前端的一些网上资源的收藏
 ---
 
 <style>
-	.href-list li {list-style: initial;margin-left: 20px;}
+	.href-list li {list-style: initial;margin-left: 42px;}
 </style>
 
 <div class="post-con">
