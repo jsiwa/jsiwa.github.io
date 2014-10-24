@@ -30,6 +30,10 @@ description:  关于前端的一些网上资源的收藏
 	<li><a href="http://codylindley.com/jqueryselectors/">jQuery选择器测试</a></li>
 	<li><a href="http://ganquan.info/yui/?hl=zh-CN">代码压缩YUI Compressor</a></li>
 	<li><a href="http://www.sojson.com/">JSON在线工具</a></li>
+	<li>
+		<a href="http://www.jslint.com/">JSLint</a>
+		<p>JavaScript语法检查器和校验器。</p>
+	</li>
 </ul>
 
 <h4>1.3 在线编辑器</h4>
