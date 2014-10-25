@@ -12,7 +12,6 @@ description:  关于前端的一些网上资源的收藏
 </style>
 
 <div class="post-con">
-<h1>前端收藏夹</h1>
 
 <h3>1. 前端工具</h3>
 <h4>1.1 兼容</h4>
