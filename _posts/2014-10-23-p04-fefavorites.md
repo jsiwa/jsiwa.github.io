@@ -1,5 +1,5 @@
 ---
-layout:    default
+layout:    post
 title:     前端收藏夹
 category:  FE
 tags:      收藏

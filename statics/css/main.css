@@ -31,7 +31,7 @@ footer p {font-size: 16px;text-align: center;line-height: 20px;padding: 40px 0!i
 /* post */
 .page-title {font-size: 16px;border-bottom: 1px solid #ccc;padding-bottom: 8px;}
 .article {padding: 20px 0;}
-.post-link {overflow: hidden;}
+.post-link {overflow: hidden;padding-top: 10px;border-top: 1px solid #eee;font-size: 14px;}
 .post-link .prev {float: left;}
 .post-link .next {float: right;}
 

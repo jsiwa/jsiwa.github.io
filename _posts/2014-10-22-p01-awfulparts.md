@@ -1,5 +1,5 @@
 ---
-layout:    default
+layout:    post
 title:     JavaScript语言精粹笔记之毒瘤
 category:  JavaScript
 tags:      JavaScript语言精粹
