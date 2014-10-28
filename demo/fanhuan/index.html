@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<title>demo</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/zepto.js"></script>
+	<script src="js/touch.js"></script>
+</head>
+<body>
+<div class="header">竞拍吧<span class="icon return"></span><a href="#">玩法</a></div>
+
+<div class="switch-info">
+	<span class="sw-info-tips">可用积分：2</span>
+	<div  class="sw-info-time-wrap">
+		<span class="sw-info-time-tit">距离本场结束</span>
+		<span class="sw-info-time">
+			<span class="time-num">0</span>
+			<span class="time-num">0</span>
+			<span>:</span>
+			<span class="time-num">0</span>
+			<span class="time-num">0</span>
+			<span>:</span>
+			<span class="time-num">0</span>
+			<span class="time-num">0</span>
+		</span>
+	</div>
+</div>
+
+<div class="switch-wrap">
+	<div class="switch-imgs-wrap">
+		<div class="switch-imgs"><img src="img/pro_01.jpg" alt="产品图片"><img src="img/pro_02.jpg" alt="产品图片"><img src="img/pro_03.jpg" alt="产品图片"></div>
+	</div>
+	<div class="switch-con">
+		<div class="pro-info">
+			<p class="pro-info-tit">可爱性感情侣套装内衣</p>
+			<a href="#">图文详情&gt;</a>
+		</div>
+		<div class="pro-price-wrap">
+			<div class="pro-price">
+				<input type="text" value="输入价格">
+				<div class="pro-bid">
+					<p>出价</p>
+					<p class="pro-bid-integral">(消耗<span>1</span>积分)</p>
+				</div>
+			</div>
+		</div>
+		<ul class="comment-list">
+			<li>
+				<span class="user-avatar"><img src="img/avatar_default.jpg" alt="默认头像"></span>
+				<span class="user-name">name</span>
+				<span class="user-pro-pid">出价:<i>￥0.4</i></span>
+				<span class="user-pid-time">19分钟前</span>
+			</li>
+			<li>
+				<span class="user-avatar"><img src="img/avatar_default.jpg" alt="默认头像"></span>
+				<span class="user-name">name</span>
+				<span class="user-pro-pid">出价:<i>￥0.4</i></span>
+				<span class="user-pid-time">19分钟前</span>
+			</li>
+			<li>
+				<span class="user-avatar"><img src="img/avatar_default.jpg" alt="默认头像"></span>
+				<span class="user-name">name</span>
+				<span class="user-pro-pid">出价:<i>￥0.4</i></span>
+				<span class="user-pid-time">19分钟前</span>
+			</li>
+			<li>
+				<span class="user-avatar"><img src="img/avatar_default.jpg" alt="默认头像"></span>
+				<span class="user-name">name</span>
+				<span class="user-pro-pid">出价:<i>￥0.4</i></span>
+				<span class="user-pid-time">19分钟前</span>
+			</li>
+			<li>
+				<span class="user-avatar"><img src="img/avatar_default.jpg" alt="默认头像"></span>
+				<span class="user-name">name</span>
+				<span class="user-pro-pid">出价:<i>￥0.4</i></span>
+				<span class="user-pid-time">19分钟前</span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="footer-tool">
+	<div class="icon-wrap-left"><span class="tool-prev icon"></span></div>
+	<div class="icon-wrap-center"><span class="tool-next icon"></span></div>
+	<div class="icon-wrap-right"><span class="tool-reload icon"></span></div>
+</div>
+
+<script>
+// 图片切换
+var switchTabs = function () {
+	var w = $(window).width(),
+		$switchImgs = $(".switch-imgs"),
+		wwrap = $switchImgs.width(),
+		wimg  = $switchImgs.find("img").width(),
+		imgspace = (wwrap - wimg*3)/2,
+		count = 0,
+		center= function () {
+			$switchImgs.css({'transform': 'translate3d(' + (w - wwrap)/2 + 'px, 0, 0)'});
+		},
+		transform = function () {
+			$switchImgs.css({'transform': 'translate3d(' + ((w - wwrap)/2 + wimg*count + imgspace*count) + 'px, 0, 0)'});
+		},
+		prev  = function () {			
+			$switchImgs.on("swipeLeft", function () {
+				count = (count === -1)? count : (count - 1);
+				transform();
+			});
+		},
+		next  = function () {
+			$switchImgs.on("swipeRight", function () {
+				count = (count === 1)? count : (count + 1);
+				transform();
+			});
+		},
+		init  = function () {
+			center();
+			prev();
+			next();
+
+		};
+		init();
+}();
+
+// 倒计时
+var countdown = function (d) {
+	var endDate = new Date(d),
+		$swInfoTime = $(".sw-info-time"),
+		nowDate = function() {
+			var now = new Date(),		
+				leftTime = endDate - now,			
+				lh = parseInt(leftTime / 1000 / 60 / 60 , 10),
+				lm = parseInt(leftTime / 1000 / 60 % 60, 10),
+				ls = parseInt(leftTime / 1000 % 60, 10),
+				zeroFill = function (t) {
+					return t < 10 ? t < 0 ? "00" : ("0" + t) : t > 100 ? "NN" : t.toString();
+				},
+				leftTimeArray = (zeroFill(lh) + zeroFill(lm) + zeroFill(ls)).split('');
+				return leftTimeArray;
+		},
+		showDate = function() {
+			$swInfoTime.find(".time-num").each(function(i){
+				$swInfoTime.find(".time-num").eq(i).text(nowDate()[i])
+			});
+		};
+	setInterval(showDate, 1000);
+};
+countdown('2014/10/30 09:10');
+</script>
+</body>
+</html>
