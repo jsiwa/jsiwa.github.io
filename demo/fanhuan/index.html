@@ -113,7 +113,7 @@ var switchTabs = function () {
 				offsetX = endX - startX;
 				$switchImgs.css({
 					'-webkit-transform': 'translate3d(' + offsetX + 'px, 0, 0)',
-					'transition': '-webkit-transform 0s'
+					'-webkit-transition': '-webkit-transform 0s'
 				});
 			});
 			$switchImgs.on("touchend", function(){
@@ -125,7 +125,7 @@ var switchTabs = function () {
 				$switchImgs.on("touchmove",function(){}).on("touchstart",function(){});
 				$switchImgs.css({
 					'-webkit-transform': 'translate3d(' + ((w - wwrap)/2 + wimg*count + imgspace*count) + 'px, 0, 0)',
-					'transition': '-webkit-transform 1s'
+					'-webkit-transition': '-webkit-transform 1s'
 				});
 			});
 
