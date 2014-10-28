@@ -96,23 +96,39 @@ var switchTabs = function () {
 		wimg  = $switchImgs.find("img").width(),
 		imgspace = (wwrap - wimg*3)/2,
 		count = 0,
+		offsetX,
 		center= function () {
-			$switchImgs.css({'transform': 'translate3d(' + (w - wwrap)/2 + 'px, 0, 0)'});
+			$switchImgs.css({'-webkit-transform': 'translate3d(' + (w - wwrap)/2 + 'px, 0, 0)'});
 		},
 		transform = function () {
-			$switchImgs.css({'transform': 'translate3d(' + ((w - wwrap)/2 + wimg*count + imgspace*count) + 'px, 0, 0)'});
+			$switchImgs.css({'-webkit-transform': 'translate3d(' + ((w - wwrap)/2 + wimg*count + imgspace*count) + 'px, 0, 0)'});
 		},
-		prev  = function () {			
-			$switchImgs.on("swipeLeft", function () {
-				count = (count === -1)? count : (count - 1);
-				transform();
+		move  = function () {
+			var startX,
+				endX;
+			$switchImgs.on("touchstart",function(e){
+					startX = e.touches[0].pageX;
+				}).on("touchmove", function(e){
+				endX = e.touches[0].pageX;
+				offsetX = endX - startX;
+				$switchImgs.css({
+					'-webkit-transform': 'translate3d(' + offsetX + 'px, 0, 0)',
+					'transition': '-webkit-transform 0s'
+				});
 			});
-		},
-		next  = function () {
-			$switchImgs.on("swipeRight", function () {
-				count = (count === 1)? count : (count + 1);
-				transform();
+			$switchImgs.on("touchend", function(){
+				if(offsetX < 0){
+					count = (count === -1)? count : (count - 1);
+				}else if (offsetX > 0){
+					count = (count === 1)? count : (count + 1);
+				}
+				$switchImgs.on("touchmove",function(){}).on("touchstart",function(){});
+				$switchImgs.css({
+					'-webkit-transform': 'translate3d(' + ((w - wwrap)/2 + wimg*count + imgspace*count) + 'px, 0, 0)',
+					'transition': '-webkit-transform 1s'
+				});
 			});
+
 		},
 		stopDefaultEvent = function () {
 			var control = navigator.control || {};
@@ -123,8 +139,7 @@ var switchTabs = function () {
 		init  = function () {
 			stopDefaultEvent();
 			center();
-			prev();
-			next();
+			move();
 		};
 		init();
 }();
