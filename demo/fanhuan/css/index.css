@@ -325,7 +325,7 @@ html { overflow-y: scroll; }
 
 /* switch END  */
 
-@media screen and (max-width: 1640px) {
+@media screen and (max-width: 640px) {
     html {
       	font-size: 31.5%;
     }
@@ -413,10 +413,14 @@ html { overflow-y: scroll; }
     }
     .switch-con .pro-info a {
     	right: 26px;
-    	top: 15px;
+    	top: 13px;
     	font-size: 9px;
     }
     .pro-price-wrap {
     	margin-top: 23px;
+    }
+    .switch-info {
+    	height: 30px;
+    	line-height: 30px;
     }
 }

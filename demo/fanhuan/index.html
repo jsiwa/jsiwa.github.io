@@ -114,11 +114,17 @@ var switchTabs = function () {
 				transform();
 			});
 		},
+		stopDefaultEvent = function () {
+			var control = navigator.control || {};
+			if (control.gesture) {
+			    control.gesture(false);
+			}
+		},
 		init  = function () {
+			stopDefaultEvent();
 			center();
 			prev();
 			next();
-
 		};
 		init();
 }();
