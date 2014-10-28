@@ -73,8 +73,8 @@ html { overflow-y: scroll; }
 /* head BEGIN */
 
 .header {
-	height: 84px; 
-	line-height: 84px;
+	height: 3em; 
+	line-height: 3em;
 	background-color: #39aefd; 
 	font-size: 2.8rem;
 	text-align: center;
@@ -93,12 +93,11 @@ html { overflow-y: scroll; }
 	position: absolute;
 	left: 0;
 	top: 50%;
-	margin-left: 24px;
-	margin-top: -16px;
-	width: 48px;
-	height: 32px;
+	margin-left: .8571em;
+	margin-top: -.5714em;
+	width: 1.7em;
+	height: 1.14em;
 	background-position: 0 -160px;
-
 }
 
 /* head END */
@@ -167,7 +166,7 @@ html { overflow-y: scroll; }
 .switch-con .pro-info {
 	position: relative;
 	font-size: 2rem; 
-	padding-top: 28px;
+	padding-top: 1.14rem;
 }
 .switch-con .pro-info .pro-info-tit {
 	text-indent: 26px;
@@ -325,3 +324,99 @@ html { overflow-y: scroll; }
 }
 
 /* switch END  */
+
+@media screen and (max-width: 1640px) {
+    html {
+      	font-size: 31.5%;
+    }
+    .icon {
+    	background-size: 68px 136px;
+    }    
+    .header .return	{
+    	background-position: 0 -50px;		
+    }
+    .footer-tool {
+    	height: 40px;
+    	line-height: 40px;
+    }
+    .footer-tool span {
+    	background-size: 56px;
+    	height: 17px;
+    }
+    .footer-tool .tool-prev {
+    	width: 9px;
+    	margin-left: 40px;
+    }
+    .footer-tool .tool-next {
+    	width: 9px;
+    	background-position: -15px 0;
+    }
+    .footer-tool .tool-reload {
+    	width: 19px;
+		background-position: 0 -21px;
+		margin-right: 40px;
+    }
+    .sw-info-time {
+    	height: 12.5px;
+    	line-height: 12.5px;
+    }
+    .switch-imgs-wrap {
+    	height: 135px;
+    }
+    .sw-info-time .time-num {
+    	width: 10px;
+    	height: 12.5px;
+    }
+    .switch-imgs img {
+		width: 134px;
+		height: 134px;
+    }
+    .switch-con {
+    	margin-top: 16px;
+    }
+    .switch-con:after {
+    	width: 11px;
+    	height: 11px;
+    	top: -6.5px;
+    }
+    .switch-con .pro-price input {
+    	width: 101px;
+    	height: 35px;
+    	text-indent: 9px;
+    	border-radius: 2px;
+    }
+    .switch-con .pro-price .pro-bid {
+    	width: 88px;
+    	height: 33px;
+    	padding-top: 3px;
+    }
+    .switch-con .pro-price .pro-bid-integral {
+    	margin-top: 5px;
+    }
+    .comment-list {
+    	margin-top: 18px;
+    }
+    .comment-list li {
+    	height: 38px;
+    	line-height: 38px;
+    	padding-left: 12px;
+    }
+    .comment-list .user-avatar img {
+    	width: 25px;
+    	height: 25px;
+    }
+    .comment-list .user-name {
+    	width: 80px;
+    }
+    ..comment-list .user-pid-time {
+    	margin-right: 20px;
+    }
+    .switch-con .pro-info a {
+    	right: 26px;
+    	top: 15px;
+    	font-size: 9px;
+    }
+    .pro-price-wrap {
+    	margin-top: 23px;
+    }
+}
