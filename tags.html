@@ -44,7 +44,7 @@ function showTag(tagStr) {
     function(data) {
         var $tagMeta = $("#tag-meta");
         $tagMeta.empty().html(tagStr);        
-        $('#show-tag').hide();
+        $('#show-tag').empty();
         $('#tag_cloud').show();
         var postList = "<ul class=\"post-list\">";
         var count = 0;
