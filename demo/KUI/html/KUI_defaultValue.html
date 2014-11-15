@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>KUI - 输入框的默认值</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="../stdlib/stdlib.js"></script>
+<script type="text/javascript" src="../kui.base.js?5.0.1"></script>
+</head>
+<style>
+body,html{margin:0;padding:0;}
+img{border:none;}
+h1{background:#eee;border-bottom:1px solid #aaa;margin:0;padding:15px;}
+table{border-collapse:collapse;font-size:12px;border:1px solid #aaa;}
+td,th{border:1px solid #aaa;padding:5px 10px;font-size:14px;}
+th{background:#f8de8f;}
+p{background:#eee;padding:4px;border:1px solid #aaa; border-left:10px solid red;float:left;display:inline;font-weight:bold;}
+.page{padding:15px;padding-bottom:150px;}
+.clear{clear:both;height:0;overflow:hidden;}
+.tip{background:#fef3b8;	padding:10px;border:1px solid #fcdd30;margin:20px 0;float:left;display:inline;line-height :2;}
+.selected{background:red;color:#fff;}
+.cur{color:red;font-weight:bold;}
+.flag{overflow:hidden;height:20px;}
+.flag div{margin-top:-10px;border:0 solid red;border-width:10px 8px;border-color:#ffffff #ffffff #ff3300 #ffffff;height:0;overflow:hidden;font-size:0;width:0;}
+button.a{position:fixed;bottom:10px;right:20px;padding:20px;display:none;}
+.empty{color:#ddd;}
+input{line-height :20px;border:1px solid #aaa;height:20px;}
+label{position:relative;left:-148px;color:#ddd;cursor:pointer;font-size:12px;}
+</style>
+<body>
+<h1>函数名: KUI_defaultValue (输入框的默认值)</h1>
+<div class="page">
+	<h3>data-config (可用配置)</h3>
+	<table>
+		<tr><th>键名</th><th>默认值</th><th>功能</th></tr>
+		<tr><td>text</td><td>'请输入关键字'</td><td>默认值</td></tr>
+		<tr><td>label</td><td>false</td><td>关联的label, 用于盖在上面做默认值，当有label时, text将失效。最好使用id匹配这个label</td></tr>
+		<tr><td>emptyCls</td><td>'empty'</td><td>有默认值时的样式</td></tr>
+		<tr><td>style</td><td>false</td><td>也可以直接设置内联样式来呈现有默认值的样式。</td></tr>
+		<tr><td>effect</td><td>true</td><td>有标签的时候淡入效果。</td></tr>
+		<tr><td>url</td><td>false</td><td>如果有值，则会回车的时候跳转到指定的地址。请使用 "{{~}}"做值的占位符</td></tr>
+		<tr><td>blank</td><td>false</td><td>是否是弹出新页面。</td></tr>
+	</table>
+	<div class="tip">
+		这个元素必须是一个input, 不能绑定到其它标签上。
+	</div>
+	<div class="clear"></div>
+	<p>data-kui="defaultValue"</p>
+	<div class="clear"></div>
+	<div><input type="text" data-kui="defaultValue"></div>
+	<div class="clear"></div>
+	<p>data-kui="defaultValue:{style:'color:red'}"</p>
+	<div class="clear"></div>
+	<div class="tip">用内联样式来呈现默认样式。</div>
+	<div class="clear"></div>
+	<div><input type="text" data-kui="defaultValue:{style:'color:red'}"></div>
+	<div class="clear"></div>
+	<p>data-kui="defaultValue:{label:'#lab'}"</p>
+	<div class="clear"></div>
+	<div class="tip">有标签， id为#lab。</div>
+	<div class="clear"></div>
+	<div><input type="text" data-kui="defaultValue:{label:'#lab'}" id="x"><label for="x" id="lab">请输入用户名</label></div>
+	<div class="clear"></div>
+	<p>data-kui="defaultValue:{label:'#lab2',url:'http://www.baidu.com/s?wd={{~}}'}"</p>
+	<div class="clear"></div>
+	<div class="tip">百度一下, 回车搜索<br/>{{~}}会填入值</div>
+	<div class="clear"></div>
+	<div><input type="text" data-kui="defaultValue:{label:'#lab2',url:'http://www.baidu.com/s?wd={{~}}'}" id="x2"><label for="x2" id="lab2">请输入要搜索的项目</label></div>
+</div>
+</body>
+<script>
+</script>
+</html>
