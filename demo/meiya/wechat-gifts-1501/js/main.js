@@ -148,3 +148,18 @@ $(window).resize(function(){
         _html.style.fontSize = winH > 640 ? 40 + 'px' : 40*winH/640 + 'px';
     };
 });
+
+
+$('section').click(function(){
+    var el = $(this);
+    el.addClass('hide');
+    if(el.next('section')){
+        el.next('section').removeClass('hide');
+    }else {
+        $('section').eq(0).addClass('hide');
+    }
+});
+
+
+
+
