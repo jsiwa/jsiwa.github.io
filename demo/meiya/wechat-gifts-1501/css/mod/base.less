@@ -1,0 +1,158 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font: 400 14px/1.5 '\534E\6587\7EC6\9ED1',Arial,Helvetica,'\u5FAE\u8F6F\u96C5\u9ED1','\u5b8b\u4f53';
+    background: url(../img/bg.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+
+.ui-slider {
+    position: relative;
+    overflow: hidden;
+    ul {
+        overflow: hidden;
+        
+    }
+    li {
+        float: left;
+    }
+    
+    .ui-dots {
+        position: absolute;
+        bottom: .3rem;
+        left: 50%;
+        margin-left: -1.3rem;
+        span {
+            display: inline-block;
+            width: .45rem;
+            height: .45rem;
+            border-radius: 50%;
+            background-color: #1d0c28;
+            margin-right: .2rem;
+        }
+        .cur {
+            background-color: #45215b;
+        }
+    }
+}
+
+.ui-btn {
+    display: block;
+    text-align: center;
+    height: 1.9rem;
+    line-height: 1.9rem;
+    font-size: .8rem;
+    color: #fff;
+    span {
+        display: inline-block;
+        width: 7.6rem;
+        vertical-align: top;
+        height: 1.9rem;
+        background-color: #ff4f95;
+    }
+    &:before, &:after {
+        content: '';
+        display: inline-block;
+        width: 1.9rem;
+        height: 1.9rem;
+        border-radius: 50% 0 0 50%;
+        vertical-align: top;
+        background-color: #ff4f95;
+    }
+    &:after {
+        border-radius: 0 50% 50% 0;
+    }
+}
+
+.ui-tit {
+    .ui-btn;
+    height: 1.35rem;
+    line-height: 1.35rem;
+    font-size: .675rem;
+    span {
+        width: initial;
+        height: 1.35rem;
+        background-color: #4d3965;
+    }
+    &:before, &:after {
+        width: 0;
+        height: 0;
+        border-width: .675rem .3rem;
+        border-style: dashed;
+        border-color: #4d3965 #4d3965 #4d3965 transparent;
+        border-radius: 0;
+        background-color: transparent;
+    }
+    &:after {
+        border-color: #4d3965 transparent #4d3965 #4d3965;
+    }
+}
+
+.ui-down {
+    position: relative;
+    width: .525rem;
+    margin: 0 auto;
+    &:before, &:after {
+        content: '';
+        display: inline-block;
+        border: 1px solid #4d3965;
+        border-width: 0 1px 1px 0;
+        width: .5rem;
+        height: .5rem;
+        -webkit-transform: rotate(45deg);
+    }
+    &:after {
+        position: absolute;
+        left: 0;
+        top: .15rem;
+    }
+}
+
+// 粉色
+.color-pink {
+    color: #ff4f95;
+}
+
+.hide {
+    display: none;
+}
+
+// 分享遮罩提示
+.share-tips {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        right: 1.25rem;
+        top: 2.2rem;
+        width: 2.05rem;
+        height: 1.875rem;
+        background: url(../img/icon-share.png) no-repeat 0 0;
+        background-size: contain;
+    }
+    p {
+        color: #fff;
+        position: relative;
+        z-index: 2;
+        font-size: .8rem;
+        text-align: center;
+        margin-top: 5.5rem;
+    }
+    .share-tips-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: .8;
+    }
+}
