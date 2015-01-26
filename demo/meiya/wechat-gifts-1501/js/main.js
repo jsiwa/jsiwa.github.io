@@ -156,7 +156,7 @@ $('section').click(function(){
     if(el.next('section')){
         el.next('section').removeClass('hide');
     }else {
-        $('section').eq(0).addClass('hide');
+        $('section').eq(0).removeClass('hide');
     }
 });
 
