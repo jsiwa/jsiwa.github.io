@@ -1,0 +1,76 @@
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,input,textarea,fieldset,p,blockquote,th,td,a,span{margin:0;padding:0}input[type="radio"],input[type="checkbox"]{cursor:pointer}table{border-collapse:collapse;border-spacing:0}th,td{word-wrap:break-word;word-break:break-all}fieldset,img{border:0 none;outline:none}img{vertical-align:top}dl,ul,ol{list-style:none}caption{text-align:left}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;vertical-align:middle;*font-size:100%;outline:0 none}legend{display:none;color:#000}input[type="radio"]{vertical-align:middle}input,textarea,select,label{font-family:Arial,simsun, sans-serif}area{hide-focus:expression(this.hideFocus=true );outline:none}iframe{width:100%;height:100%}i,em{font-style:normal}strong{font-weight:normal}* html,* html body{background-image:url(about:blank);background-attachment:fixed}
+/* main */
+body {font: 400 14px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif"Microsoft Yahei";color:#333;}
+a {text-decoration: none;color:#333;}
+.w {margin: 0 auto;padding: 0 10px;}
+
+/* header */
+header {background: #1c9971;color: #fff;}
+header .nav-header {overflow: hidden;}
+header a {color: #fff;}
+header .logo {font-weight:400;font-size:20px;line-height:20px;padding: 15px 0;float: left;}
+header .nav-main {float:left;line-height: 20px;padding: 15px 0;margin-left: 10px;}
+header .nav-main a {font-size: 16px;margin-left: 40px;-webkit-transition: color 1s;transition: color 1s;}
+header .nav-main a:hover {color: #bbf1e0;}
+/** 导航条隐藏按钮 **/
+.nav-toggle {display:none;position: relative;float:right;cursor: pointer;padding: 9px 10px;margin: 8px 15px 0 0;background-color: transparent;border: 1px solid #fff;border-radius: 4px;-webkit-transition: background-color 1s;transition: background-color 1s;}
+.nav-toggle:hover {background-color: #0bc78b;}
+.nav-toggle .icon-bar {display:block;width: 22px;height: 2px;border-radius: 1px; background-color: #fff;}
+.nav-toggle .icon-bar+ .icon-bar {margin-top: 4px;}
+
+/* con */
+.con {padding: 20px 10px;}
+.list-header {font-size: 16px;height: 40px;}
+.list-header h4 {padding: 10px 0;line-height: 20px;border-bottom: 1px solid #ccc;}
+
+/* footer */
+footer {background: #1c9971;color: #fff;height: 100px;}
+footer p {font-size: 16px;text-align: center;line-height: 20px;padding: 40px 0!important;}
+
+/* post */
+.page-title {font-size: 16px;border-bottom: 1px solid #ccc;padding-bottom: 8px;}
+.article {padding: 20px 0;}
+.post-link {overflow: hidden;padding-top: 10px;border-top: 1px solid #eee;font-size: 14px;}
+.post-link .prev {float: left;}
+.post-link .next {float: right;}
+
+/* 分页 */
+.pagination {padding: 20px 0;}
+.page-prev, .page-next {-webkit-transition: color 1s;transition: color 1s;}
+.page-prev:hover, .page-next:hover {color: #1c9971;}
+.page-prev {margin-right: 8px;}
+.page-next {margin-left: 8px;}
+.page-none {color: #666;}
+.pagination .page-num {padding: 0 4px;}
+.pagination em {color: #1c9971;font-weight: 800;}
+
+/* 文章列表 */
+.post-list .post-time {margin-right: 10px;}
+.post-list li {padding-top: 20px;}
+.post-list a {color: #1c9971;-webkit-transiton: color 1s;transition: color 1s;}
+.post-list a:hover {border-bottom: 1px solid #0bc78b;color: #0bc78b;}
+
+/* 文章样式 */
+.post-con {font-size: 16px;line-height: 1.6;}
+.post-con h2 {font-size: 20px;padding: 10px 0;}
+.post-con h3 {font-size: 18px;padding: 10px 0;}
+.post-con h4,.post-con h5,.post-con h6 {font-size: 16px;padding: 10px 0;}
+.post-con p {padding: 8px 0;}
+.post-con a {color:#1c9971;}
+.post-con a:hover {border-bottom: 1px solid #0bc78b;color: #0bc78b;}
+/** 表格 **/
+.jsiwa_table td,.jsiwa_table th {border: 1px solid #ddd;padding: 2px 20px;text-align: left;}
+.jsiwa_table th {background-color: #ccc;}
+
+/* 屏幕缩放 */
+@media screen and (min-width: 1023px) {
+	.w {width: 960px;}
+}
+
+@media screen and (max-width: 640px) {
+	.nav-toggle {display: block;}
+	header .nav-main {display: none;border-top: 1px solid #0bc78b;margin-top: 50px;margin-left: 0;padding:0;float:none;}
+	header .nav-main a {display: block;margin-left: 0;padding: 8px 0;border-bottom: 1px solid rgba(11, 199, 139, 0.25);}
+}
+

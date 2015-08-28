@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>KUI - 全局变量定义</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="../stdlib/stdlib.js"></script>
+<script type="text/javascript" src="../kui.base.js?5.0.1"></script>
+</head>
+<style>
+body,html{margin:0;padding:0;}
+img{border:none;}
+h1{background:#eee;border-bottom:1px solid #aaa;margin:0;padding:15px;}
+table{border-collapse:collapse;font-size:12px;border:1px solid #aaa;}
+td,th{border:1px solid #aaa;padding:5px 10px;font-size:14px;}
+th{background:#f8de8f;}
+p{background:#eee;padding:4px;border:1px solid #aaa; border-left:10px solid red;float:left;display:inline;font-weight:bold;}
+.page{padding:15px;padding-bottom:350px;}
+.clear{clear:both;height:0;overflow:hidden;}
+.tip{background:#fef3b8;	padding:10px;border:1px solid #fcdd30;margin:20px 0;float:left;display:inline;line-height :2;}
+.selected{background:red;color:#fff;}
+.cur{color:red;font-weight:bold;}
+.flag{overflow:hidden;height:20px;}
+.flag div{margin-top:-10px;border:0 solid red;border-width:10px 8px;border-color:#ffffff #ffffff #ff3300 #ffffff;height:0;overflow:hidden;font-size:0;width:0;}
+</style>
+<body data-define="fixed:{right:100,top:100}">
+<h1>函数名: KUI_define ( 全局变量定义)</h1>
+<div class="page">
+	<h3>data-config (可用配置)</h3>
+	<table>
+		<tr><th>键名</th><th>默认值</th><th>功能</th></tr>
+		<tr><td>变量名如 height </td><td> 200 </td><td>稍后可在其它配置中用 KUI.def.height来设置值200。<br/>data-define="height:200"</td></tr>
+	</table>
+	<div class="tip">
+		用来实现多处共用一个值的场景。<br/>
+		只能设置在body标签上。<br/>
+		只能用 KUI.def.name访问。
+	</div>
+	<div class="clear"></div>
+	<p> data-kui="fixed:KUI.def.fixed"</p>
+	<div class="clear"></div>
+	<div class="tip"  data-kui="fixed:KUI.def.fixed">body标签上已设置: data-define="fixed:{right:100,top:100}"</div>
+</div>
+</body>
+<script>
+</script>
+</html>

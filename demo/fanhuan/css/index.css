@@ -1,0 +1,424 @@
+ /* reset css BEGIN */
+
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
+/* rem set */
+
+html {font-size: 62.5%;/*10 ÷ 16 × 100% = 62.5%, 1rem == 10px*/}
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea { /* for ie */
+    font: 1.6rem/1 Tahoma, Helvetica, Arial, "\5FAE\8F6F\96C5\9ED1", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+}
+
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.4rem; }
+h4, h5, h6 { font-size: 100%; }
+
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 1.2rem; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+
+/* 重置文本格式元素 */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html { overflow-y: scroll; }
+
+/* reset css END */
+
+.icon {background-image: url(../img/index_icon.png);}
+
+/* head BEGIN */
+
+.header {
+	height: 3em; 
+	line-height: 3em;
+	background-color: #39aefd; 
+	font-size: 2.8rem;
+	text-align: center;
+	color: #fff;
+	position: relative;
+}	
+.header a {
+	color: #fff;
+	float: right;
+	margin-right: 2rem;
+}
+.header a:hover {
+	text-decoration: none;
+}
+.header .return {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-left: .8571em;
+	margin-top: -.5714em;
+	width: 1.7em;
+	height: 1.14em;
+	background-position: 0 -160px;
+}
+
+/* head END */
+/* switch BEGIN */
+
+.switch-info {
+	height: 60px;
+	line-height: 60px;
+	background-color: #feefd2;
+}
+.sw-info-tips {
+	color: #7e5534;
+	margin-left: 18px;
+}
+.sw-info-time-wrap {
+	float: right;
+	margin-right: 20px;
+}
+.sw-info-time-tit {
+	color: #d42a00;
+	margin-right: 2px;
+}
+.sw-info-time {
+	color: #fff;
+	height: 25px;
+	line-height: 25px;
+	color: #000;
+}
+.sw-info-time .time-num {
+	display: inline-block;
+	width: 20px;
+	height: 25px;
+	background-color: #5a4b40;
+	border: 1px solid #4d3b32;
+	border-radius: 2px;
+	text-align: center;
+	color: #fff;
+}
+
+.switch-wrap {
+	background-color: #feefd2;
+}
+.switch-con {
+	position: relative;
+	border-top: 1px solid #f7dfb6;
+	background-color: #fff;
+	margin-top: 32px;
+}
+.switch-con:after {
+	content: '';
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	top: -13px;
+	left: 50%;
+	margin-left: -11px;
+	border: solid #f7dfb6;
+	border-width: 1px 1px 0 0;
+	background: #fff;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.switch-con .pro-info {
+	position: relative;
+	font-size: 2rem; 
+	padding-top: 1.14rem;
+}
+.switch-con .pro-info .pro-info-tit {
+	text-indent: 26px;
+}
+.switch-con .pro-info a {
+	position: absolute;
+	right: 52px;
+	top: 30px;
+	font-size: 18px;
+	color: #2a7cc1;
+}
+
+.pro-price-wrap {
+	text-align: center;
+	margin-top: 45px;
+}
+.switch-con .pro-price {
+	display: inline-block;
+}
+.switch-con .pro-price input {
+	width: 202px;
+	height: 70px;
+	text-indent: 18px;
+	font-size: 2.4rem;
+	border: 1px solid #ccc;
+	border-radius: 4px; 
+	color: #ccc;
+} 
+.switch-con .pro-price .pro-bid {
+	width: 166px;
+	height: 66px;
+	padding-top: 6px;
+	background-color: #fe564d;
+	border-radius: 4px;
+	display: inline-block;
+	font-size: 2.4rem;
+	vertical-align: top;
+	color: #fff;
+	margin-left: 20px;
+}
+.switch-con .pro-price .pro-bid-integral {
+	font-size: 1.6rem;
+	margin-top: 10px;
+	color: #f1c7c2;
+}
+
+/* 切换图片 */
+.switch-imgs-wrap {
+	width: 100%;
+	overflow: hidden;
+	height: 270px;
+	position: relative;
+}
+.switch-imgs {
+	position: absolute;
+	white-space: nowrap;
+	top: 0;
+	left:0;
+}
+.switch-imgs img {
+	width: 268px;
+	height: 268px;
+	margin-left: 24px;
+}
+.switch-imgs img:nth-child(1) {
+	margin-left: 0px;
+}
+
+/* 评论列表 */
+.comment-list {
+	margin-top: 36px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.comment-list li {
+	border-top: 1px solid #e5e5e5;
+	height: 76px;
+	line-height: 76px;
+	padding-left: 24px;
+}
+.comment-list .user-avatar {
+	margin-right: 24px;
+}
+.comment-list .user-avatar img {
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+}
+.comment-list .user-name {
+	display: inline-block;
+	vertical-align: middle;
+	width: 160px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* 出价 */
+.comment-list .user-pro-pid {
+	 color: #999;
+}
+.comment-list .user-pro-pid i {
+	font-style: normal;
+	color: #fc3200;
+}
+/* 时间 */
+.comment-list .user-pid-time {
+	float: right;
+	margin-right: 40px;
+	color: #999;
+}
+
+/* 底部工具 */
+.footer-tool {
+	height: 80px;
+	line-height: 80px;
+	border-top: 1px solid #ddd;
+	margin-top: -1px;
+	position: relative;
+}
+.footer-tool>div {
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+}
+.footer-tool .icon-wrap-left {
+	text-align: left;
+}
+.footer-tool .icon-wrap-center {
+	text-align: center;
+}
+.footer-tool .icon-wrap-right {
+	text-align: right;
+}
+.footer-tool span {
+	display: inline-block;
+	height: 34px;
+	background-size: 112px;
+	vertical-align: middle;
+}
+.footer-tool .tool-prev {
+	width: 18px;
+	margin-left: 80px;
+}
+.footer-tool .tool-next {
+	width: 18px;
+	background-position: -30px 0;
+}
+.footer-tool .tool-reload {
+	width: 38px;
+	background-position: 0 -42px;
+	margin-right: 80px;
+}
+
+/* switch END  */
+
+@media screen and (max-width: 640px) {
+    html {
+      	font-size: 31.5%;
+    }
+    .icon {
+    	background-size: 68px 136px;
+    }    
+    .header .return	{
+    	background-position: 0 -50px;		
+    }
+    .footer-tool {
+    	height: 40px;
+    	line-height: 40px;
+    }
+    .footer-tool span {
+    	background-size: 56px;
+    	height: 17px;
+    }
+    .footer-tool .tool-prev {
+    	width: 9px;
+    	margin-left: 40px;
+    }
+    .footer-tool .tool-next {
+    	width: 9px;
+    	background-position: -15px 0;
+    }
+    .footer-tool .tool-reload {
+    	width: 19px;
+		background-position: 0 -21px;
+		margin-right: 40px;
+    }
+    .sw-info-time {
+    	height: 12.5px;
+    	line-height: 12.5px;
+    }
+    .switch-imgs-wrap {
+    	height: 135px;
+    }
+    .sw-info-time .time-num {
+    	width: 10px;
+    	height: 12.5px;
+    }
+    .switch-imgs img {
+		width: 134px;
+		height: 134px;
+    }
+    .switch-con {
+    	margin-top: 16px;
+    }
+    .switch-con:after {
+    	width: 11px;
+    	height: 11px;
+    	top: -6.5px;
+    }
+    .switch-con .pro-price input {
+    	width: 101px;
+    	height: 35px;
+    	text-indent: 9px;
+    	border-radius: 2px;
+    }
+    .switch-con .pro-price .pro-bid {
+    	width: 88px;
+    	height: 33px;
+    	padding-top: 3px;
+    }
+    .switch-con .pro-price .pro-bid-integral {
+    	margin-top: 5px;
+    }
+    .comment-list {
+    	margin-top: 18px;
+    }
+    .comment-list li {
+    	height: 38px;
+    	line-height: 38px;
+    	padding-left: 12px;
+    }
+    .comment-list .user-avatar img {
+    	width: 25px;
+    	height: 25px;
+    }
+    .comment-list .user-name {
+    	width: 80px;
+    }
+    ..comment-list .user-pid-time {
+    	margin-right: 20px;
+    }
+    .switch-con .pro-info a {
+    	right: 26px;
+    	top: 13px;
+    	font-size: 9px;
+    }
+    .pro-price-wrap {
+    	margin-top: 23px;
+    }
+    .switch-info {
+    	height: 30px;
+    	line-height: 30px;
+    }
+}

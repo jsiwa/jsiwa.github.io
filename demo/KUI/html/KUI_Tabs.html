@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>KUI - 选项卡</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="../stdlib/stdlib.js"></script>
+<script type="text/javascript" src="../kui.base.js?5.0.1"></script>
+</head>
+<style>
+body,html{margin:0;padding:0;}
+a{float:left;display:inline;}
+img{border:none;}
+h1{background:#eee;border-bottom:1px solid #aaa;margin:0;padding:15px;}
+table{border-collapse:collapse;font-size:12px;border:1px solid #aaa;}
+td,th{border:1px solid #aaa;padding:5px 10px;font-size:14px;}
+th{background:#f8de8f;}
+p{background:#eee;padding:4px;border:1px solid #aaa; border-left:10px solid red;float:left;display:inline;font-weight:bold;}
+.page{padding:15px;}
+.clear{clear:both;height:0;overflow:hidden;}
+.tip{background:#fef3b8;	padding:10px;border:1px solid #fcdd30;margin:20px 0;float:left;display:inline;line-height :2;}
+.selected{background:red;color:#fff;}
+.k_tabs_btn{margin:0;padding:0;}
+.k_tabs_btn li{float:left;display:inline;width:80px;padding:5px;text-align:center;cursor:pointer;}
+.k_tabs_btn{height:23px;font-size:12px;border-bottom:1px solid red;}
+.k_tabs_content div{
+	font-size:12px;	
+	padding:20px;
+}
+.k_tabs_content{
+	background:#eee;	
+}
+.h100 div{height:100px;}
+.info-list span{display:block;background:#eee;padding:10px;border-bottom:1px solid #ddd;cursor:pointer;}
+.info-list div{height:100px;color:red;border:1px solid #ddd;padding:10px;}
+.info-list .selected {background:#1899e7;}
+.vlist{width:250px;}
+.vlist ul, .vlist li{margin:0;padding:0;list-style:none;}
+.cur{color:red;font-weight:bold;}
+.flag{overflow:hidden;height:20px;}
+.flag div{margin-top:-10px;border:0 solid red;border-width:10px 8px;border-color:#ffffff #ffffff #ff3300 #ffffff;height:0;overflow:hidden;font-size:0;width:0;}
+</style>
+<body>
+<h1>组件名: Tabs (选项卡)</h1>
+<div class="page">
+	<h3>data-config (组件可用配置)</h3>
+	<table>
+		<tr><th>键名</th><th>默认值</th><th>功能</th></tr>
+		<tr><td>nav</td><td>'.k_tabs_btn'</td><td>导航按钮组选择</td></tr>
+		<tr><td>navItem</td><td>'*'</td><td>导航按钮选择，当按钮与内容在同一个容器，必须使用它来区分</td></tr>
+		<tr><td>content</td><td>'.k_tabs_content'</td><td>选项内容容器</td></tr>
+		<tr><td>contentItem</td><td>'*'</td><td>选项内容项选择，当按钮与内容在同一个容器，必须使用它来区分</td></tr>
+		<tr><td>selectedCls</td><td>'selected'</td><td>导航按钮选中样式</td></tr>
+		<tr><td>trigger</td><td>'hover'</td><td>触发事件，有hover和click两种</td></tr>
+		<tr><td>fx</td><td>[{marginLeft:-10}, {marginLeft:0}]</td><td>自定义动画效果，值为数组，第一个元素为初始值，每二个指个动画值</td></tr>
+		<tr><td>fxItem</td><td>false</td><td>动画效果附加目标，默认为当前焦点按钮</td></tr>
+		<tr><td>easing</td><td>false</td><td>缓动函数</td></tr>
+		<tr><td>speed</td><td>200</td><td>动画速度</td></tr>
+		<tr><td>toggleTo</td><td>0</td><td>初始化时定位到第几个</td></tr>
+		<tr><td>autoplay</td><td>false</td><td>是否自动播放</td></tr>
+		<tr><td>interval</td><td>5000</td><td>自动播放时间间隔</td></tr>
+		<tr><td>css3</td><td>[out, delay, in]</td><td>如果浏览器支持css3变换，可以使用动画效果, out是退场动画，delay是估计动画耗时，in是出场动画</td></tr>
+	</table>
+	<div class="tip">
+		如果选项卡内容单元上有 data-ajax 属性，会动态加载内容填充进来。<br>
+		不对内容做动画，只对按钮或者指定的第三方标签做动画。
+	</div>
+	<div class="clear"></div>
+	<p> data-kui="Tabs"</p>
+	<div class="clear"></div>
+	<div class="tip">
+		默认选项卡，监听一个消息。
+	</div>
+	<div class="clear"></div>
+	<div data-kui="Tabs">
+		<ul class="k_tabs_btn">
+			<li>选项一</li>
+			<li>选项二</li>
+			<li>选项三</li>
+		</ul>
+		<div class="k_tabs_content">
+			<div>内容一</div>
+			<div>内容二</div>
+			<div>内容三</div>
+		</div>
+	</div>
+	<p>data-kui="Tabs:{name:'tabs1',trigger:'click',toggleTo:2,fx:[{width:120},{width:60}]}"</p>
+	<div class="clear"></div>
+	<script>
+		JS.message.on('tabs1:toggle', function (tabs, form, to){
+			$('#g').html([form, to].join(' 到 '));
+		});
+	</script>
+	<div class="tip">
+		1、点击切换，有按钮width动画<br/>
+		<div id="g" style="background:#fff">监听'tabs1:toggle'消息</div>
+		设置了name为tabs1, 就可以监听消息 'tabs1:toggle' 来接收切换事件。<br/>
+		如: data-kui="showMsg:{type:'tabs1:toggle',tmpl:'消息说: tabs1 从{{1}}切换到{{2}}'}"
+	</div>
+	<div class="clear"></div>
+	<div data-kui="Tabs:{name:'tabs1',trigger:'click',toggleTo:2,fx:[{width:120},{width:60}]}">
+		<ul class="k_tabs_btn">
+			<li>选项一</li>
+			<li>选项二</li>
+			<li>选项三</li>
+		</ul>
+		<div class="k_tabs_content">
+			<div>内容一</div>
+			<div>内容二</div>
+			<div>内容三</div>
+		</div>
+	</div>
+	<p>data-kui="Tabs:{selectedCls:'cur',autoplay:true,interval:1500,fxItem:'div.flag',fx:[{marginLeft:'this.position().left+22'}]}"</p>
+	<div class="clear"></div>
+	<div class="tip">
+		1、选中样式设置为 cur<br>
+		2、动画对象 fxItem 为 div.flag, 注意这个参数和其它组件不同，它不从按钮内部查找，而是从组件开始查找。<br>
+		3、动画值使用了表达式 'this.position().left+22', 凡是包含this字样的都会认为是表达式， this代表当前选中按钮的jQuery对象。
+	</div>
+	<div class="clear"></div>
+	<div data-kui="Tabs:{selectedCls:'cur',autoplay:true,interval:1500,fxItem:'div.flag',fx:[{marginLeft:'this.position().left+22'}]}">
+		<ul class="k_tabs_btn">
+			<li>选项一</li>
+			<li>选项二</li>
+			<li>选项三</li>
+		</ul>
+		<div class="clear"></div>
+		<div class="flag"><div></div></div>
+		<div class="k_tabs_content h100">
+			<div>内容一</div>
+			<div>内容二</div>
+			<div>内容三</div>
+		</div>
+	</div>
+	<p>data-kui="Tabs:{nav:'ul.info-list',navItem:'span',content:'ul.info-list',contentItem:'div',fx:[{paddingLeft:30},{paddingLeft:10}]}"</p>
+	<div class="clear"></div>
+	<div class="tip">
+		1、竖向列表。(也可以用KUI函数hover实现)<br/>
+		2、默认按钮组是nav的所有子节点，这里取的是 span, 有一个动画paddingLeft。<br/>
+		3、默认内容组是content的所有子节点，这里因为要取li下面的div, 所以设置 contentItem 的值，<br/>
+			这样会使用 content.find(contentItem), 即找到匹配的后代节点，不一定是子节点。<br/>
+	</div>
+	<div class="clear"></div>
+	<div class="vlist" data-kui="Tabs:{nav:'ul.info-list',navItem:'span',content:'ul.info-list',contentItem:'div',fx:[{paddingLeft:30},{paddingLeft:10}]}">
+		<ul class="info-list">
+			<li><span>栏目1</span><div>详情1</div></li>
+			<li><span>栏目2</span><div>详情2</div></li>
+			<li><span>栏目3</span><div>详情3</div></li>
+			<li><span>栏目4</span><div>详情4</div></li>
+		</ul>
+	</div>
+</body>
+<script>
+</script>
+</html>

@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>KUI - 高亮格子</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="../stdlib/stdlib.js"></script>
+<script type="text/javascript" src="../kui.base.js?5.0.1"></script>
+</head>
+<style>
+body,html{margin:0;padding:0;}
+.bl{border:1px solid #aaa;float:left;display:inline;}
+.fl{float:left;display:inline;}
+.mb20{margin-bottom:20px;}
+a{float:left;display:inline;}
+img{border:none;}
+h1{background:#eee;border-bottom:1px solid #aaa;margin:0;padding:15px;}
+table{border-collapse:collapse;font-size:12px;border:1px solid #aaa;}
+td,th{border:1px solid #aaa;padding:5px 10px;font-size:14px;}
+th{background:#f8de8f;}
+p{background:#eee;padding:4px;border:1px solid #aaa; border-left:10px solid red;float:left;display:inline;font-weight:bold;}
+.floot{padding-top:30px;}
+.page{padding:15px;padding-bottom:40px;border:1px solid #fff;}
+.clear{clear:both;height:0;overflow:hidden;font-size:0;}
+.tip{background:#fef3b8;	padding:10px;border:1px solid #fcdd30;margin:20px 0;float:left;display:inline;line-height :2;}
+.selected{background:red;color:#fff;}
+.selfx a{width:180px;overflow:hidden;}
+.selfy a{height:130px;overflow:hidden;}
+</style>
+<body>
+<h1>组件名: KUI_LightCell (高亮格子)</h1>
+<div class="page">
+	<h3>data-config (组件可用配置)</h3>
+	<table>
+		<tr><th>键名</th><th>默认值</th><th>功能</th></tr>
+		<tr><td>items</td><td>'a img'</td><td>单元格子选择符</td></tr>
+		<tr><td>opacity</td><td>0.5</td><td>暗格子的透明度</td></tr>
+		<tr><td>fxItem</td><td>null</td><td>格子动画子元素, 如果为null, 额外动画将附加到格子上</td></tr>
+		<tr><td>fx</td><td>[{},{}]</td><td>额外动画控制项，前者为移入动画，后者为移出动画</td></tr>
+		<tr><td>easing</td><td>false</td><td>缓动函数</td></tr>
+		<tr><td>speed</td><td>500</td><td>动画速度</td></tr>
+	</table>
+	<p> data-kui="LightCell"</p>
+	<div class="clear"></div>
+	<div class="tip">
+		默认黑底高亮选中项, 无动画。
+	</div>
+	<div class="clear"></div>
+	<div class="bl" data-kui="LightCell">
+		<a href="#"><img src="http://upload2.kypbuy.com/resources/adimgs/2013/05/11/518df42a0c24e.jpg" alt=""></a>
+		<a href="#"><img src="http://upload2.kypbuy.com/resources/adimgs/2013/05/11/518df42a0c24e.jpg" alt=""></a>
+		<a href="#"><img src="http://upload2.kypbuy.com/resources/adimgs/2013/05/11/518df42a0c24e.jpg" alt=""></a>
+
+	</div>
+	<div class="clear"></div>
+	<p>data-kui="LightCell:{opacity:0.5,fx:[{marginLeft:-30},{marginLeft:0}]}"</p>
+	<div class="clear"></div>
+	<div class="tip">
+		透明度为0.5, 有一个左移动画。
+	</div>
+	<div class="clear"></div>
+	<div class="selfx bl" data-kui="LightCell:{opacity:0.5,fx:[{marginLeft:-30},{marginLeft:0}]}">
+		<a href="#"><img src="http://img-cdn2.paixie.net/sign_pic/20130708/137326981466c86a.jpg" alt=""></a>
+		<a href="#"><img src="http://img-cdn2.paixie.net/sign_pic/20130708/1373270537992d4e.jpg" alt=""></a>
+		<a href="#"><img src="http://img-cdn2.paixie.net/sign_pic/20130705/1373017910694efb.jpg" alt=""></a>
+	</div>
+	<div class="clear"></div>
+	<p> data-kui="LightCell:{fx:[{marginTop:-50},{marginTop:0}],speed:200,easing:'easeOutBack'}"</p>
+	<div class="clear"></div>
+	<div class="tip">
+		上移动画, 使用了easeOutBack缓动, 速度为200。
+	</div>
+	<div class="clear"></div>
+	<div class="selfy bl fl mb20" data-kui="LightCell:{fx:[{marginTop:-50},{marginTop:0}],speed:200,easing:'easeOutBack'}">
+		<a href="#"><img src="http://img-cdn2.paixie.net/sign_pic/20130708/137326981466c86a.jpg" alt=""></a>
+		<a href="#"><img src="http://img-cdn2.paixie.net/sign_pic/20130708/1373270537992d4e.jpg" alt=""></a>
+		<a href="#"><img src="http://img-cdn2.paixie.net/sign_pic/20130705/1373017910694efb.jpg" alt=""></a>
+	</div>
+	<div class="clear"></div>
+</div>
+</body>
+</html>

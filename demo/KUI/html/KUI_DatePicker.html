@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<style>
+p{margin:0;padding:0;font-size:16px;background:#000;color:#eee;padding:3px;}
+.help{
+	border:1px solid #aaa;
+	background:#eee;
+	padding:20px;
+	margin:5px;
+}
+</style>
+</head>
+<body>
+<div class="help">
+	<ol>
+		<li>输出格式决定显示界面, 用input的属性 data-format, 兼容旧的 data-datetype, 注意完整的是 "yy-MM-dd hh:mm", 月份是大写的M, 分钟是小写的m。</li>
+		<li>必须早于某个时间为 data-gt, 必须晚于某个时间为 data-lt, 值可以是时间如"2014-12-1", 也可以是一个其它input的id, 会取其值为限定</li>
+		<li>默认关联的小图标为i.date, 可以用 icon配置来修改</li>
+		<li>对于动态的要使用delegate来配置</li>
+		<li>对于在随着子滚动框滚动的的要使用autoScroll来配置, 如：$('input').datePicker({
+   autoScroll: 'div.ooxx'
+})</li>
+		<li>只读文本框使用readonly来配置, 也可以直接在input上设置</li>
+		<li>要禁用弹出, 直接在input上设置disabled</li>
+	</ol>
+</div>
+<button>动态添加</button>
+<div class="dt"></div>
+<input type="text"><i class="date">图标</i>
+<input type="text" data-format="yy-MM-dd hh:mm" data-gt="2014-12-1" data-lt="2015/1/6">
+<input type="text" data-datetype="hh:mm:ss" data-gt="2010-10-10">
+<select name="" id=""><option value="">test</option></select>
+<input type="text" data-datetype="date:yy/MM/dd hh:mm:ss">
+<input type="text" disabled value="禁用">
+<input type="text" data-format="hh:mm" readonly  data-gt="5:10"><br/>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select><br>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select><br>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select><br>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select><br>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select><br>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select><br>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select><br>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select><br>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select>
+<select name="" id=""><option value="">test</option></select><select name="" id=""><option value="">test</option></select><br>
+<div style="height:400px">...</div>
+</body>
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="../datePicker2.js"></script>
+<script>
+function log(x){
+	if (window.console&&console.log) {
+		console.log(x)
+	}
+}
+
+$('input').datePicker();
+$('div.dt').datePicker({
+	delegate:'input'
+});
+$('button').click(function (){
+	$('div.dt').html($('div.dt').html()+'<input type="text">');
+});
+</script>
+</html>

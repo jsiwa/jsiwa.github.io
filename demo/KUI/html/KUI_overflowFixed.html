@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>KUI - 超出后静态固定</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="../stdlib/stdlib.js"></script>
+<script type="text/javascript" src="../kui.base.js?5.0.1"></script>
+</head>
+<style>
+body,html{margin:0;padding:0;}
+img{border:none;}
+h1{background:#eee;border-bottom:1px solid #aaa;margin:0;padding:15px;}
+table{border-collapse:collapse;font-size:12px;border:1px solid #aaa;}
+td,th{border:1px solid #aaa;padding:5px 10px;font-size:14px;}
+th{background:#f8de8f;}
+p{background:#eee;padding:4px;border:1px solid #aaa; border-left:10px solid red;float:left;display:inline;font-weight:bold;}
+.page{padding:15px;padding-bottom:150px;}
+.clear{clear:both;height:0;overflow:hidden;}
+.tip{background:#fef3b8;	padding:10px;border:1px solid #fcdd30;margin:20px 0;float:left;display:inline;line-height :2;}
+.selected{background:red;color:#fff;}
+.cur{color:red;font-weight:bold;}
+.flag{overflow:hidden;height:20px;}
+.flag div{margin-top:-10px;border:0 solid red;border-width:10px 8px;border-color:#ffffff #ffffff #ff3300 #ffffff;height:0;overflow:hidden;font-size:0;width:0;}
+button.a{position:fixed;bottom:10px;right:20px;padding:20px;display:none;}
+</style>
+<body>
+<h1>函数名: KUI_overflowFixed (超出后静态固定)</h1>
+<div class="page">
+	<h3>data-config (可用配置)</h3>
+	<table>
+		<tr><th>键名</th><th>默认值</th><th>功能</th></tr>
+		<tr><td>offset</td><td>0</td><td>离父节点多远的时候开始固定。</td></tr>
+		<tr><td>parent</td><td>false</td><td>可以选择特定的父节点。如 parent: 'div.tool-shell'</td></tr>
+		<tr><td>fixSize</td><td>true</td><td>内容静态定位，可能引起高度减少，这个选项在静态前会自动设置父节点高度和自身宽度。</td></tr>
+		<tr><td>top,left,right,bottom</td><td>{top:0}</td><td>静态位置设置。</td></tr>
+		<tr><td>fixedCls</td><td>false</td><td>静态时添加样式。</td></tr>
+		<tr><td>fx</td><td>[{},{}]</td><td>起始值，与动画目标值。最好使用marginTop或者opacity</td></tr>
+		<tr><td>speed</td><td>300</td><td>动画速度</td></tr>
+		<tr><td>easing</td><td>默认</td><td>动画缓动</td></tr>
+	</table>
+	<div>
+		<div class="tip" data-kui="overflowFixed:{fixedCls:'selected'}">
+			用来实现一些冻结的表头、栏目头、工具栏、边侧工具面板效果。
+			滚动超出父节点的高度时会钉在静态位置不随滚动条滚动。
+		</div>	
+	</div>
+	<div class="clear"></div>
+	<p>data-kui="overflowFixed:{fixedCls:'selected'}"</p>
+	<div class="clear"></div>
+	<div class="tip">静态时添加 selected 样式。</div>
+	<div class="clear"></div>
+	<div><button data-kui="showByTop:1,backTop:1,fixed:{bottom:20,right:20}" class="a">滚动到200时显示，点击回到顶部</button></div>
+	<div style="height:2000px;width:10px;background:#eee;margin-bottom:20px"> </div>
+	<p>data-kui="scrollTo:{to:'p', offset:-20}"</p>
+	<div class="clear"></div>
+	<button data-kui="scrollTo:{to:'p', offset:-20}" id="back">滚动加第一个p元素处</button>
+</div>
+</body>
+<script>
+</script>
+</html>

@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>KUI - 菜单</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="../stdlib/stdlib.js"></script>
+<script type="text/javascript" src="../kui.base.js?5.0.1"></script>
+</head>
+<style>
+body,html{margin:0;padding:0;}
+img{border:none;}
+h1{background:#eee;border-bottom:1px solid #aaa;margin:0;padding:15px;}
+table{border-collapse:collapse;font-size:12px;border:1px solid #aaa;}
+td,th{border:1px solid #aaa;padding:5px 10px;font-size:14px;}
+th{background:#f8de8f;}
+p{background:#eee;padding:4px;border:1px solid #aaa; border-left:10px solid red;float:left;display:inline;font-weight:bold;}
+.page{padding:15px;padding-bottom:250px;}
+.clear{clear:both;height:0;overflow:hidden;}
+.tip{background:#fef3b8;	padding:10px;border:1px solid #fcdd30;margin:20px 0;float:left;display:inline;line-height :2;}
+.selected{background:red;color:#fff;}
+.cur{color:red;font-weight:bold;}
+.flag{overflow:hidden;height:20px;}
+.flag div{margin-top:-10px;border:0 solid red;border-width:10px 8px;border-color:#ffffff #ffffff #ff3300 #ffffff;height:0;overflow:hidden;font-size:0;width:0;}
+.menu .k_menu_btn, .menu .k_menu_btn li{
+	margin:0;padding:0;
+	list-style:none;
+	background:#F0F3F6;
+}
+.menu .k_menu_btn{
+	width:220px;
+	border:1px solid #bad8d1;
+}
+.menu .k_menu_btn li{
+	padding:15px;
+	border:1px dashed #F0F3F6;
+	position:relative; 
+}
+.menu .k_menu_btn li.last{
+	border:none;	
+}
+.menu .k_menu_btn li.selected{
+	background:#fff;
+	box-shadow: 0px 0px 18px #aaa;
+	border:1px solid #cbcbcb;
+	position:relative; 
+	z-index:3;
+}
+.menu .k_menu_btn li a{
+	color:#000;
+	text-decoration:none;
+	display:block;
+	width:100%;
+	font-weight:bold;
+}
+.menu .k_menu_btn li span.mk{
+	position:absolute;
+	background:#fff;
+	height:100%;
+	width:20px;
+	top:0;
+	right:-5px;
+	z-index:4;
+	display:none;
+}
+.menu .k_menu_content{
+	display:none;
+	background:#fff;
+	box-shadow: 0px 0px 18px #aaa;
+	border:1px solid #cbcbcb;
+	position:absolute; 
+	left:215px;
+	height:300px;
+	width:500px;
+	top:-1px;
+	color:#000;
+	padding:12px;
+	overflow:hidden;
+}
+ .k_menu_btn li.selected .k_menu_content{
+	display:block;	
+}
+ .k_menu_btn li.selected span.mk{display:block;}
+ .k_menu_btn li.selected span.bl{display:none;}
+span.bl{
+	display:block;
+	border-bottom:1px dashed #ddd;
+	position:absolute;
+	bottom:2px;
+	width:80%;
+}
+ .k_menu_btn li i{
+	background: url(http://ued.paixie.net/images/public/public.3.0.gif) no-repeat;	
+	width: 6px;
+	height: 9px;
+	background-position: -335px 0;
+	position: absolute;
+	right: 17px;
+	top:13px;
+}
+.menu-x ul{
+	background:#3C4251;
+	height:30px;
+}
+.menu-x .k_menu_content{
+	display:none;	
+}
+.menu-x li{
+	float:left;display:inline;	
+	width:100px;
+}
+.menu-x{
+	width:auto;
+}
+button{position:absolute; left:10px;z-index:9;}
+</style>
+<body>
+<h1>组件名: KUI_Menu (菜单)</h1>
+<div class="page">
+	<h3>data-config (组件可用配置)</h3>
+	<table>
+		<tr><th>键名</th><th>默认值</th><th>功能</th></tr>
+		<tr><td>nav</td><td>'.k_menu_btn'</td><td>菜单按钮容器选择</td></tr>
+		<tr><td>content</td><td>'.k_menu_content'</td><td>菜单内容容器选择符，菜单内容必须是按钮的子对象。</td></tr>
+		<tr><td>selectedCls</td><td>'selected'</td><td>导航按钮选中样式</td></tr>
+		<tr><td>alignTop</td><td>true</td><td>对齐顶部，在竖向菜单中有效。</td></tr>
+		<tr><td>offset</td><td>0</td><td>一些可能的微调。</td></tr>
+		<tr><td>speed</td><td>200</td><td>动画速度</td></tr>
+		<tr><td>easing</td><td>false</td><td>缓动函数</td></tr>
+		<tr><td>fx</td><td>[{},{},{}]</td><td>按钮动画设置, [移入，移出，初始化]</td></tr>
+		<tr><td>fxItem</td><td>false</td><td>动画元素选择符，默认为按钮本身，可以修改为按钮子元素。<br/>内容面板也是按钮的子对象，所以也可以设置。</td></tr>
+		<tr><td>topFx</td><td>true</td><td>是否启用菜单体的上下移动动画</td></tr>
+		<tr><td>delay</td><td>120</td><td>鼠标移动上去延迟时间</td></tr>
+	</table>
+	<div class="tip">
+		1、菜单分为左侧横向弹出式和水平主菜单下拉式，<br/>
+		2、结构只支持按钮包含内容(菜单主体是按钮的子节点)式, 不支持按钮内容分离<br/>
+		3、不包含单个的菜单(这种可以用KUI函数hover实现)
+	</div>
+	<div class="clear"></div>
+	<p>data-kui="Menu"</p>
+	<div class="clear"></div>
+	<div class="menu" data-kui="Menu">
+		<ul class="k_menu_btn" data-kui="overflowFixed">
+			<li><a href="#">运动鞋</a>
+				<span class="mk"></span>
+				<span class="bl"></span><i></i>
+				<div class="k_menu_content"><img src="http://img-cdn2.paixie.net/newspic/20130713/1373680646636025.png" alt=""></div>
+			</li>
+			<li><a href="#">魅力女鞋</a>
+				<span class="mk"></span>
+				<span class="bl"></span><i></i>
+				<div class="k_menu_content"><img src="http://img-cdn2.paixie.net/newspic/20130713/1373680794a1afbf.png" alt=""></div></li>
+			<li><a href="#">时尚男鞋</a>		
+				<span class="mk"></span>
+				<span class="bl"></span><i></i>
+				<div class="k_menu_content"><img src="http://img-cdn2.paixie.net/newspic/20130713/137368090488c18d.png" alt=""></div></li>
+			<li><a href="#">户外鞋</a>	
+				<span class="mk"></span>
+				<span class="bl"></span><i></i>
+				<div class="k_menu_content"><img src="http://img-cdn2.paixie.net/newspic/20130713/1373681001967e1e.png" alt=""></div></li>
+			<li><a href="#">童鞋</a>	
+				<span class="mk"></span><i></i>
+				<div class="k_menu_content"><img src="http://img-cdn2.paixie.net/newspic/20130713/1373681140467e1a.png" alt=""></div></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<p> data-kui="Menu:{speed:800,fxItem:'img',easing:'easeOutElastic',fx:[{marginLeft:0},{marginLeft:10},{ marginLeft:10}]}"</p>
+	<div class="clear"></div>
+	<div class="tip">
+		速度800, 面板内部img做偏移动画,缓动函数为easeOutElastic。
+	</div>
+	<div class="clear"></div>
+	<div class="menu" data-kui="Menu:{speed:800,fxItem:'img',easing:'easeOutElastic',fx:[{marginLeft:0},{marginLeft:10},{ marginLeft:10}]}">
+		<ul class="k_menu_btn">
+			<li><a href="#">运动鞋</a>
+				<span class="mk"></span>
+				<span class="bl"></span><i></i>
+				<div class="k_menu_content"><img src="http://img-cdn2.paixie.net/newspic/20130713/1373680646636025.png" alt=""></div>
+			</li>
+			<li><a href="#">魅力女鞋</a>
+				<span class="mk"></span>
+				<span class="bl"></span><i></i>
+				<div class="k_menu_content"><img src="http://img-cdn2.paixie.net/newspic/20130713/1373680794a1afbf.png" alt=""></div></li>
+			<li><a href="#">时尚男鞋</a>		
+				<span class="mk"></span>
+				<span class="bl"></span><i></i>
+				<div class="k_menu_content"><img src="http://img-cdn2.paixie.net/newspic/20130713/137368090488c18d.png" alt=""></div></li>
+			<li><a href="#">户外鞋</a>	
+				<span class="mk"></span>
+				<span class="bl"></span><i></i>
+				<div class="k_menu_content"><img src="http://img-cdn2.paixie.net/newspic/20130713/1373681001967e1e.png" alt=""></div></li>
+			<li><a href="#">童鞋</a>	
+				<span class="mk"></span><i></i>
+				<div class="k_menu_content"><img src="http://img-cdn2.paixie.net/newspic/20130713/1373681140467e1a.png" alt=""></div></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+</div>
+</body>
+<script>
+</script>
+</html>
