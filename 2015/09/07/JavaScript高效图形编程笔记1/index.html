@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="茄子叔叔" />
+  <meta name="keywords" content="Javascript,高效图形编程," />
 
 
 
@@ -41,7 +41,7 @@
     sidebar: 'post'
   };
 </script>
-  <title> 茄子叔叔 </title>
+  <title> JavaScript高效图形编程笔记1 // 茄子叔叔 </title>
 </head>
 
 <body>
@@ -55,9 +55,7 @@
   </div>
 <![endif]-->
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <div id="header" class="header">
@@ -141,9 +139,9 @@
       <div class="main-inner">
         <div id="content" class="content">
           
+
   <div id="posts" class="posts-expand">
     
-      
 
   <div class="post post-type-normal ">
     <div class="post-header">
@@ -154,76 +152,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/09/08/为什么要开个博客/">
-                为什么要开个博客
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-09-08
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/09/08/为什么要开个博客/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/08/为什么要开个博客/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>我本身是属于想法比较多的，你也知道做开发的话都比较少，有时候积攒了一堆的想法，总得找个出口，有时候会找些朋友聊聊天，但不是所有时候身边都有一个可以聊天的朋友，所以就把想说的写在这里吧，也可以写给未来的自己看——之前还有这想法。github本身也是一个学习交流的好地方，也可以写写一些学习笔记啥的。</p>
-<p>就这样子了，睡觉。</p>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/07/JavaScript高效图形编程笔记1/">
-                JavaScript高效图形编程笔记1
-              </a>
+              JavaScript高效图形编程笔记1
             
           
         </h1>
@@ -255,8 +184,7 @@
       
 
       
-        
-          <h4 id="基础事实">基础事实</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Javascript不是一个基于类的语言；</span><br><span class="line">写好代码，并不一定需要基于类的面向对象编程语言。</span><br></pre></td></tr></table></figure>
+        <h4 id="基础事实">基础事实</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Javascript不是一个基于类的语言；</span><br><span class="line">写好代码，并不一定需要基于类的面向对象编程语言。</span><br></pre></td></tr></table></figure>
 <p>扬长避短：利用Javascript的灵活性，而小心避开难处理的部分。基于类的其他语言容易引起笨拙的类层次和臃肿的代码，Javascript则提供了同样有效但更加轻量级的继承模式。</p>
 <h5 id="Javascript“经典”继承">Javascript“经典”继承</h5><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Pet = <span class="function"><span class="keyword">function</span><span class="params">(name, legs)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.legs = legs;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Pet.prototype.getDetails = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="string">'拥有'</span> + <span class="keyword">this</span>.legs + <span class="string">'腿'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Cat = <span class="function"><span class="keyword">function</span><span class="params">(name)</span></span>&#123;</span><br><span class="line">    Pet.call(<span class="keyword">this</span>, name, <span class="number">4</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Cat.prototype = <span class="keyword">new</span> Pet();</span><br><span class="line"></span><br><span class="line">Cat.prototype.action = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"抓住一只鸟"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> petCat = <span class="keyword">new</span> Cat(<span class="string">'百变猫'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> details = petCat.getDetails();</span><br><span class="line"><span class="keyword">var</span> action  = petCat.action();</span><br><span class="line">petCat.name = <span class="string">"小小猫"</span>;</span><br><span class="line">petCat.legs = <span class="number">7</span>; <span class="comment">// 这里修改了一个不合理的值，这种继承方法没有提供对外部继承的保护。</span></span><br><span class="line">details = petCat.getDetails();</span><br></pre></td></tr></table></figure>
 <h4 id="利用函数继承（functional_inheritance）特性来吸收和增强对象实例（object_instances）">利用函数继承（functional inheritance）特性来吸收和增强对象实例（object instances）</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pet = <span class="function"><span class="keyword">function</span><span class="params">(name, legs)</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = &#123;</span><br><span class="line">        name: name,</span><br><span class="line">        getDetails: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> that.name + <span class="string">'拥有'</span> + legs + <span class="string">'腿'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> that;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> cat = <span class="function"><span class="keyword">function</span><span class="params">(name)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = pet(name, <span class="number">4</span>);</span><br><span class="line">    that.action = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'抓住两只鸟'</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> that;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> petCat2 = cat(<span class="string">'百变猫'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> details = petCat2.getDetails();</span><br><span class="line"><span class="keyword">var</span> action  = petCat2.action();</span><br><span class="line">petCat2.name = <span class="string">"小小猫"</span>;</span><br><span class="line">petCat2.legs = <span class="number">7</span>;</span><br><span class="line">details = petCat2.getDetails();</span><br></pre></td></tr></table></figure>
@@ -264,110 +192,58 @@
 <h4 id="查找表_lookup_table">查找表 lookup table</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="id">#draw-target</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">480px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">320px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#000</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"draw-target"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">        <span class="keyword">var</span> fastSin = <span class="function"><span class="keyword">function</span>(<span class="params">steps</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> table = [];</span><br><span class="line">            <span class="keyword">var</span> ang   = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">var</span> angStep = (<span class="built_in">Math</span>.PI * <span class="number">2</span>) / steps;</span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                table.push(<span class="built_in">Math</span>.sin(ang));</span><br><span class="line">                ang += angStep;</span><br><span class="line">            &#125; <span class="keyword">while</span> (ang &lt; <span class="built_in">Math</span>.PI * <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">return</span> table;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> sinTable = fastSin(<span class="number">4096</span>);</span><br><span class="line">        <span class="keyword">var</span> $drawTarget = <span class="built_in">document</span>.getElementById(<span class="string">"draw-target"</span>);</span><br><span class="line">        <span class="keyword">var</span> i, bars = [], x = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 更新许多1像素宽的div高度和位置，画出一个正弦波</span></span><br><span class="line">        <span class="keyword">var</span> drawGraph = <span class="function"><span class="keyword">function</span>(<span class="params">ang, freg, height</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> height2 = height * <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">480</span>; i++) &#123;</span><br><span class="line">                bars[i].style.top = <span class="number">160</span> - height + sinTable[(ang + (i * freg)) &amp; <span class="number">4095</span>] * height + <span class="string">'px'</span>;</span><br><span class="line">                bars[i].style.height = height2 + <span class="string">'px'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">480</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">            div.setAttribute(<span class="string">'style'</span>, <span class="string">'position: absolute;width: 1px;height: 40px;background-color: #0d0;top: 0;left: '</span> + i + <span class="string">'px;'</span>);</span><br><span class="line">            bars.push(div);</span><br><span class="line"></span><br><span class="line">            $drawTarget.appendChild(div);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            drawGraph(x * <span class="number">50</span>, <span class="number">32</span> - (sinTable[(x * <span class="number">20</span>) &amp; <span class="number">4095</span>] * <span class="number">6</span>), <span class="number">50</span> - (sinTable[(x * <span class="number">10</span>) &amp; <span class="number">4095</span>] * <span class="number">20</span>));</span><br><span class="line">            x++;</span><br><span class="line">        &#125;, <span class="number">20</span>);</span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>ps: 如果查找表里面的值由比Math.sin()更复杂的函数计算出来的，查找表方法的性能优势将更明显</p>
 
-        
       
     </div>
 
     <div class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript/"> #Javascript </a>
+          
+            <a href="/tags/高效图形编程/"> #高效图形编程 </a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/08/为什么要开个博客/">为什么要开个博客</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/10/23/我所理解的产品经理/">我所理解的产品经理</a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </div>
   </div>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+
     
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2014/10/23/我所理解的产品经理/">
-                我所理解的产品经理
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2014-10-23
-        </span>
-
+      <div class="comments" id="comments">
         
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/10/23/我所理解的产品经理/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/10/23/我所理解的产品经理/"></span>
-            </a>
-          </span>
-          
+          <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
         
       </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>最早接触产品经理是在11年的时候，那时刚从大学毕业，青涩懵懂。因受到电影《社交网络》的影响，对互联网存在一种向往。省内互联网氛围最好的就属厦门了，就在人才网上找了比较知名的35互联（当时就知道几家公司），看了下职位要求，感觉产品专员比较有希望。结果面试没通过。当时产品经理这个概念没像今天这么泛滥（一本《人人都是产 品经理》，顿时把这个门槛降到极限了），如今很多人和我当时的心态一样，认为产品经理很容易，认为自己拥有一个非常好的idea，这个想法做出来绝对能够改变世界。乔布斯的那句活着就是为了改变世界，是多么美妙的心灵鸡汤。</p>
-<p>许多产品经理的职位要求都是这样的：</p>
-<ol>
-<li>表达能力强（文字/口头）</li>
-<li>逻辑思维能力强</li>
-<li>工作经验</li>
-<li>基本技能：文档、原型图（Axure）、Visio、项目管理能力等</li>
-<li>加分项: 数据分析/技术背景/交互设计/完美主义（甚至还看到只招处女座的）等</li>
-</ol>
-<p>每个公司对产品经理的要求和标准是不一样的。我认为产品经理应该是除了老板，最关心产品的人，甚至比老板还要关心。产品经理要串联公司所有岗位的人，所以得需要良好的沟通表达能力，文档、原型图、Visio等也是为了更好的沟通。产品最怕需求一变再变，所以还需要产品经理要有缜密的思维，当然，再怎么缜密的思维也没办法全面，我始终坚信好的产品是改出来的、优化出来的。项目推进与管理，就要求产品经理要有绝对的权力和情商了。</p>
-<p>但上面这些还是属于最基本的，其实产品经理最核心的技能应该是用户需求分析。</p>
-<p>推荐下这篇文章：<a href="http://mp.weixin.qq.com/s?__biz=MzA3NTcwOTIwNg==&amp;mid=200631853&amp;idx=1&amp;sn=acc05c5b4bda6db1580944587f33cf7b&amp;scene=1&amp;from=singlemessage&amp;isappinstalled=0#rd&amp;ADUIN=609579007&amp;ADSESSION=1413956177&amp;ADTAG=CLIENT.QQ.5329_.0&amp;ADPUBNO=26349" target="_blank" rel="external">用户需求分析：背后隐藏的门槛</a></p>
-<p>文章中认为产品经理是互联网的红利烧红了一个新的职业。一夜间，仿佛人人都是产品经理了。但作为产品经理的核心功力——用户需求分析，是没那么容易忽悠的。</p>
-<p>从前有一个国王，国王有个极其娇惯、任性、无比作的公主，这个国王又无比的宠爱这个公主：不管这个公主有什么愿望，国王一定满足。终于有一天，公主说：“父王，我要月亮！”，于是国王叫来一个臣仆，说把月亮给我女儿给摘来，不然我就杀了你，臣仆欲哭无泪，最终被国王杀害，接着叫来另一个臣仆，也无奈之愤愤而终。在公主的哭闹下，臣仆一个个死去，终于轮到了一个聪明的，他接到任务后，来到公主前谦卑的问：“亲爱的公主啊，请告诉愚昧的臣仆，月亮是什么啊？”公主不耐烦的说：“月亮是什么你都不知道！月亮就是用金子做的，如手指盖般大小，弯弯的，晚上就会挂在我窗前的树枝上啊，白天不知道被谁偷走了。”此臣仆暗喜，照此炮制，逃过一劫。</p>
-<p>忽悠是会被杀头的，现实中不也一样，互联网发展这么快，慢人一步可能就没机会了，只不过杀的是公司和自己的前途。</p>
-<p>需求分析还有门派之分：一个是软派——注重意识形态分析，另一个是硬派——注重数据建模和分析。具体的就点进文章去脑补吧。</p>
-<p>最后在推荐一篇无节操有下限的文章，形象的展示了产品经理/码农/设计三者之间的关系。</p>
-<p><a href="http://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5NjQyMjE1NA==&amp;appmsgid=10000007&amp;itemidx=1&amp;sign=5ad3d2adf847263855bb8183c622e78b#wechat_redirect" target="_blank" rel="external">大话科技No.2：产品经理/码农/设计师的3P战争</a></p>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
     
   </div>
 
-  
 
         </div>
 
@@ -388,6 +264,15 @@
   <div id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <div class="site-overview">
@@ -435,6 +320,17 @@
         
       </div>
 
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础事实"><span class="nav-number">1.</span> <span class="nav-text">基础事实</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Javascript“经典”继承"><span class="nav-number">1.1.</span> <span class="nav-text">Javascript“经典”继承</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用函数继承（functional_inheritance）特性来吸收和增强对象实例（object_instances）"><span class="nav-number">2.</span> <span class="nav-text">利用函数继承（functional inheritance）特性来吸收和增强对象实例（object instances）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查找表_lookup_table"><span class="nav-number">3.</span> <span class="nav-text">查找表 lookup table</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
       
 
     </div>
@@ -497,6 +393,145 @@
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
@@ -516,9 +551,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'your-disqus-shortname';
-      var disqus_identifier = 'index.html';
-      var disqus_title = '';
-      var disqus_url = '';
+      var disqus_identifier = '2015/09/07/JavaScript高效图形编程笔记1/';
+      var disqus_title = 'JavaScript高效图形编程笔记1';
+      var disqus_url = 'http://jsiwa.github.io/2015/09/07/JavaScript高效图形编程笔记1/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -529,6 +564,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
