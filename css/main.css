@@ -2306,7 +2306,7 @@ ul li {
 }
 .site-meta .site-title {
   font-size: 22px;
-  font-weight: bolder;
+  /*font-weight: bolder;*/
 }
 @media (max-width: 767px) {
   .site-meta .site-title {
